@@ -1,0 +1,1 @@
+export { default as list} from "@/api/points/package/list";
