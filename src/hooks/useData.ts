@@ -8,8 +8,6 @@ interface State {
 
 interface Result {
   state: State;
-  setLoading: (loading: boolean) => void;
-  setPackages: (packages: Array<any>) => void;
 }
 
 const state = reactive<State>({
@@ -18,14 +16,6 @@ const state = reactive<State>({
   packages: [],
 });
 
-const setLoading = (loading: boolean) => {
-  state.loading = loading;
-};
-
-const setPackages = (packages: Array<any>) => {
-  state.packages = packages;
-};
-
 export default (): Result => {
-  return { state, setLoading, setPackages };
+  return { state };
 };

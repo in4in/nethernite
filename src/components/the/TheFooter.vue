@@ -46,7 +46,7 @@
 .avatar {
   width: 140px;
   height: 180px;
-  background-image: url(https://hhcdn.ru/photo/639643658.jpeg?t=1651331172&h=wn4ihDIVVPg4PNSiqJnkLg);
+  background-image: url(https://hhcdn.ru/photo/639643658.jpeg?t=1651868120&h=G93VH0wdaJyJ0uNDYXUAtQ);
   background-repeat: no-repeat;
   background-position: -35px -105px;
 }

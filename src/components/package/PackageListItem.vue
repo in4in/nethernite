@@ -1,13 +1,19 @@
 <template>
-  <a
-    href="#"
+  <div
     class="list-group-item list-group-item-action"
+    @click.prevent="onClick"
   >
     <div class="d-flex w-100 justify-content-between">
-      <h5 class="mb-1">{{ name }}</h5>
-      <small>{{ version }}</small>
+      <h5 class="mb-1">
+        {{ name }}
+      </h5>
+      <small>
+        {{ version }}
+      </small>
     </div>
-    <p class="mb-1">{{ description }}</p>
+    <p class="mb-1">
+      {{ description }}
+    </p>
     <small>
       <a
         :href="`mailto:${publisher.email}`"
@@ -28,11 +34,12 @@
         {{ keyword }}
       </span>
     </div>
-  </a>
+  </div>
 </template>
 
 <script lang="ts" setup>
 import { defineProps } from "vue";
+import { useRouter } from "vue-router";
 
 interface Props {
   name: string;
@@ -42,5 +49,21 @@ interface Props {
   publisher: Record<string, string>;
 }
 
-defineProps<Props>();
+const props = defineProps<Props>();
+const router = useRouter();
+
+const onClick = () => {
+  const { name, query } = router.currentRoute.value;
+  name && router.push({ 
+    name,
+    query,
+    params: { packet: `${props.name}@${props.version}` }
+  });
+};
 </script>
+
+<style lang="scss" scoped>
+.list-group-item {
+  cursor: pointer;
+}
+</style>

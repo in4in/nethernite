@@ -24,7 +24,7 @@ export const fetchRequest = async (
       throw new Error("Request execution error")
     }
   } catch (error) {
-    console.log(error);
+    console.error(error);
     throw error;
   }
 };

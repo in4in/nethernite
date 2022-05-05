@@ -1,5 +1,5 @@
 # nethernite
-Тестовое задание
+Test task
 
 ## Project setup
 ```
